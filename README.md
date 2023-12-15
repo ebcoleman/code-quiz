@@ -98,3 +98,10 @@ You are required to submit BOTH of the following for review:
 ---
 
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+
+
+<!-- include in final README -->
+
+## Credits
+
+https://www.testgorilla.com/blog/basic-javascript-interview-questions/?utm_term=&utm_campaign=Performance+Max+%7C+US&utm_source=google&utm_medium=cpc&hsa_acc=4932434860&hsa_cam=20820719729&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQiAj_CrBhD-ARIsAIiMxT-Z7Pv0wMSksj6Dpr1IN00t7dyuf9Nya4Yyt0l5RJvVI7o4nec_ecsaAnw7EALw_wcB&gad_source=1
