@@ -27,9 +27,9 @@ var questionIndex = 0;
 function askQuestion(){
     var currentQuestion = questions[questionIndex];
     questionElement.textContent = currentQuestion.question;
-    document.getElementById(choiceA).textContent = currentQuestion.choices[0];
-    document.getElementById(choiceB).textContent = currentQuestion.choices[1];
-    document.getElementById(choiceC).textContent = currentQuestion.choices[2];
+    document.getElementById("choiceA").textContent = currentQuestion.choices[0];
+    document.getElementById("choiceB").textContent = currentQuestion.choices[1];
+    document.getElementById("choiceC").textContent = currentQuestion.choices[2];
 };
 
 function startButtonClick() {
