@@ -9,18 +9,21 @@
 
 <body>
 
-    <div start page>
+    <div id="start-screen">
         <h1>CODE QUIZ</h1>
         <h2>Let's begin</h2>
         <button id="start-btn">START</button>
     </div>
-    
-    <div quiz>
-        <div timer>
-        <div question>
+   
+    <!-- display:none makes this div hidden until called -->
+    <div id="quiz" style="display: none">
+        <!-- <div timer> -->
+        <p id="question"></p>
+        <ul id="choices"></ul>
+        <!-- These buttons will likely be created in JS
             <button>A.</button>
             <button>B.</button>
-            <button>C.</button>
+            <button>C.</button> -->
     </div>
     <script src="script.js"></script>
 </body>
