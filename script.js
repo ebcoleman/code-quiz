@@ -4,6 +4,7 @@ var quiz = document.getElementById("quiz");
 var questionElement = document.getElementById("question");
 var choicesList = document.getElementById("choices");
 var timerElement = document.getElementById("timer");
+var submitButton = document.getElementById("submit-btn");
 var correctAnswer = 0;
 var userScore = 0;
 
@@ -36,6 +37,7 @@ function quizCompleted () {
 
 function showDoneScreen () {
     clearInterval(timerInterval);
+
     var doneScreen = document.getElementById("done");
     var userInitials = document.getElementById("initials");
 
@@ -48,7 +50,22 @@ function showDoneScreen () {
     var finalTimeRemaining = document.createElement("p");
     finalTimeRemaining.textContent = "Time reamaining: " + timeRemaining + "sec.";
     doneScreen.appendChild(finalTimeRemaining);
-};
+
+
+
+    submitButton.addEventListener("click", function() {
+
+    var userData = {
+        initials: userInitials.value,
+        score: userScore,
+        timeRemaining: timeRemaining
+    };
+
+    localStorage.setItem("userData", JSON.stringify(userData));
+    console.log("User submitted: ", userData);
+});
+}
+
 
 function askQuestion(){
     var currentQuestion = questions[questionIndex];
@@ -124,5 +141,4 @@ function startButtonClick() {
 };
 
 startButton.addEventListener("click", startButtonClick);
-
 
