@@ -3,6 +3,7 @@ var startScreen = document.getElementById("start-screen");
 var quiz = document.getElementById("quiz");
 var questionElement = document.getElementById("question");
 var choicesList = document.getElementById("choices");
+var timerElement = document.getElementById("timer");
 
 
 var questions = [
@@ -25,11 +26,15 @@ var questions = [
 
 var questionIndex = 0;
 
+var timeRemaining = 60;
+var timerInterval;
+
 function quizCompleted () {
     return questionIndex === questions.length;
 };
 
 function showDoneScreen () {
+    clearInterval(timerInterval);
     var doneScreen = document.getElementById("done");
     var userInitials = document.getElementById("initials");
 
@@ -43,10 +48,6 @@ function showDoneScreen () {
 function askQuestion(){
     var currentQuestion = questions[questionIndex];
     questionElement.textContent = currentQuestion.question;
-    // hiding 47-49 to see the difference
-    // document.getElementById("choiceA").textContent = currentQuestion.choices[0];
-    // document.getElementById("choiceB").textContent = currentQuestion.choices[1];
-    // document.getElementById("choiceC").textContent = currentQuestion.choices[2];
 
     choicesList.innerHTML = "";
 
@@ -60,17 +61,6 @@ function askQuestion(){
     });
 };
     
-// lines 36-44 are stating that when that choice is clicked, it is in relation to that specific answer in the array; then it will call the function to handle the user's answer
-// document.getElementById("choiceA").addEventListener("click", function (){
-//     handleUserAnswer(currentQuestion.choices[0])
-// });
-// document.getElementById("choiceB").addEventListener("click", function (){
-//     handleUserAnswer(currentQuestion.choices[1])
-// });
-// document.getElementById("choiceC").addEventListener("click", function (){
-//     handleUserAnswer(currentQuestion.choices[2])
-// });
-// }
 function handleUserAnswer(userChoice) {
     var currentQuestion = questions[questionIndex]; 
 
@@ -79,6 +69,10 @@ function handleUserAnswer(userChoice) {
     }
     else {
         console.log("INCORRECT ANSWER! =/(")
+        timeRemaining -= 10;
+        if (timeRemaining < 0) {
+            timeRemaining = 0;
+        }
     }
 
     questionIndex++;
@@ -92,13 +86,28 @@ function handleUserAnswer(userChoice) {
 
 }
 
+timerElement.textContent = "Timer: " + timeRemaining + " sec.";
+
+function startTimer() {
+    timerInterval = setInterval(function () {
+        timeRemaining--;
+        if (timeRemaining <= 0) {
+            clearInterval (timerInterval);
+            quiz.style.display = "none";
+            showDoneScreen();
+        } else {
+            timerElement.textContent = "Timer: " + timeRemaining + " sec.";
+        }
+    }, 1000);
+}
+
 function startButtonClick() {
     console.log("Started quiz")
     // once start button is clicked this hides the start screen
     startScreen.style.display = "none";
 
     quiz.style.display = "block";
-
+    startTimer();
     askQuestion();
     
 };

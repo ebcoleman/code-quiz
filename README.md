@@ -105,3 +105,19 @@ You are required to submit BOTH of the following for review:
 ## Credits
 
 https://www.testgorilla.com/blog/basic-javascript-interview-questions/?utm_term=&utm_campaign=Performance+Max+%7C+US&utm_source=google&utm_medium=cpc&hsa_acc=4932434860&hsa_cam=20820719729&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQiAj_CrBhD-ARIsAIiMxT-Z7Pv0wMSksj6Dpr1IN00t7dyuf9Nya4Yyt0l5RJvVI7o4nec_ecsaAnw7EALw_wcB&gad_source=1
+
+
+## EDITTED Acceptance Criteria
+
+```
+GIVEN I am taking a code quiz
+WHEN I click the start button
+THEN a timer starts and I am presented with a question
+
+WHEN I answer a question incorrectly
+THEN time is subtracted from the clock
+WHEN all questions are answered or the timer reaches 0
+THEN the game is over
+WHEN the game is over
+<!-- create localStorage -->
+THEN I can save my initials and my score
