@@ -31,7 +31,7 @@ function askQuestion(){
     document.getElementById("choiceA").textContent = currentQuestion.choices[0];
     document.getElementById("choiceB").textContent = currentQuestion.choices[1];
     document.getElementById("choiceC").textContent = currentQuestion.choices[2];
-};
+
 // lines 36-44 are stating that when that choice is clicked, it is in relation to that specific answer in the array; then it will call the function to handle the user's answer
 document.getElementById("choiceA").addEventListener("click", function (){
     handleUserAnswer(currentQuestion.choices[0])
@@ -42,7 +42,7 @@ document.getElementById("choiceB").addEventListener("click", function (){
 document.getElementById("choiceC").addEventListener("click", function (){
     handleUserAnswer(currentQuestion.choices[2])
 });
-
+}
 function handleUserAnswer(userChoice) {
     var currentQuestion = questions[questionIndex]; 
 
