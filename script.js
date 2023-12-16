@@ -4,7 +4,8 @@ var quiz = document.getElementById("quiz");
 var questionElement = document.getElementById("question");
 var choicesList = document.getElementById("choices");
 var timerElement = document.getElementById("timer");
-
+var correctAnswer = 0;
+var userScore = 0;
 
 var questions = [
     {
@@ -39,10 +40,14 @@ function showDoneScreen () {
     var userInitials = document.getElementById("initials");
 
     doneScreen.style.display = "block";
-    // do not yet have a calculateScore function which will link to below var
-    // var score = calculateScore ();
 
-    // doneScreen.innerHTML += "<p>Your score: " + score + "</p>";
+    var displayScore = document.createElement("p");
+    displayScore.textContent = "Your score: " + userScore;
+    doneScreen.appendChild(displayScore);
+
+    var finalTimeRemaining = document.createElement("p");
+    finalTimeRemaining.textContent = "Time reamaining: " + timeRemaining + "sec.";
+    doneScreen.appendChild(finalTimeRemaining);
 };
 
 function askQuestion(){
@@ -61,14 +66,18 @@ function askQuestion(){
     });
 };
     
+// when the user answers correctly 10 points are added to their score, when incorrectly answer 10 seconds removed from timer
 function handleUserAnswer(userChoice) {
     var currentQuestion = questions[questionIndex]; 
 
     if (userChoice === currentQuestion.answer) {
         console.log("CORRECT ANSWER!")
+        correctAnswer++;
+        // adds 10 points each time user answers correctly
+        userScore += 10;
     }
     else {
-        console.log("INCORRECT ANSWER! =/(")
+        console.log("INCORRECT ANSWER! =/")
         timeRemaining -= 10;
         if (timeRemaining < 0) {
             timeRemaining = 0;
@@ -76,6 +85,7 @@ function handleUserAnswer(userChoice) {
     }
 
     questionIndex++;
+
 // if the quiz is completed show the done screen, if not call the askQuestion function
     if (quizCompleted ()) {
         quiz.style.display = "none";
@@ -83,6 +93,7 @@ function handleUserAnswer(userChoice) {
     } else {
         askQuestion();
     }
+    timerElement.textContent = "Timer: " + timeRemaining + " sec.";
 
 }
 
