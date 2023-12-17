@@ -128,7 +128,7 @@ function handleUserAnswer(userChoice) {
 
 }
 
-// timerElement.textContent = "Timer: " + timeRemaining + " sec.";
+timerElement.textContent = "Timer: " + timeRemaining + " sec.";
 
 function startTimer() {
     timerInterval = setInterval(function () {
