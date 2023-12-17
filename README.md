@@ -9,10 +9,14 @@ This code quiz opens on the start screen; displaying the start button and a link
 ## Usage
 
 Screenshots:
-    ![Alt text](/images/start-screen.jpg)
-    ![Alt text](/images/question.jpg)
-    ![Alt text](/images/quiz-complete.jpg)
+   
+  ![Alt text](/images/start-screen.jpg)
+  ![Alt text](/images/question.jpg)
+  ![Alt text](/images/quiz-complete.jpg)
+    
 Link:
+
+    https://ebcoleman.github.io/code-quiz/
 
 
 ## Credits
@@ -21,13 +25,3 @@ https://www.testgorilla.com/blog/basic-javascript-interview-questions/?utm_term=
 
 https://github.com/JustinMarchi/Homework4-CodeQuiz.github.io/blob/master/script.js
 
-
-## EDITTED Acceptance Criteria
-
-```
-GIVEN I am taking a code quiz
-
-
-WHEN the game is over
-<!-- create localStorage -->
-THEN I can save my initials and my score
