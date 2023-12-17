@@ -51,8 +51,6 @@ function showDoneScreen () {
     finalTimeRemaining.textContent = "Time reamaining: " + timeRemaining + "sec.";
     doneScreen.appendChild(finalTimeRemaining);
 
-    
-
     submitButton.addEventListener("click", function() {
 
     var userData = {
@@ -69,17 +67,6 @@ function showDoneScreen () {
 }
     var storedData = JSON.parse(localStorage.getItem("userData"));
         console.log("User's score", storedData)
-// below 8 lines not needed
-//     window.addEventListener("load", function(){
-//         var storedData = this.localStorage.getItem("storedData");
-//         if (storedData !== null){
-//             this.alert("You're the first to play!")
-//         }
-//     })
-
-// });
-// }
-
 
 function askQuestion(){
     var currentQuestion = questions[questionIndex];
@@ -154,6 +141,3 @@ function startButtonClick() {
     askQuestion();
     
 };
-
-// startButton.addEventListener("click", startButtonClick);
-
