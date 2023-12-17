@@ -61,24 +61,24 @@ function showDoneScreen () {
         timeRemaining: timeRemaining
     };
 
-// something has to be incorrect between this line and 69
     localStorage.setItem("userData", JSON.stringify(userData));
     console.log("User submitted: ", userData);
 
     window.location.href = "scoreboard.html";
-    
-    var storedData = JSON.parse(localStorage.getItem("userData"));
-        console.log("User's score", storedData)
-
-    window.addEventListener("load", function(){
-        var storedData = this.localStorage.getItem("storedData");
-        if (storedData !== null){
-            this.alert("You're the first to play!")
-        }
-    })
-
 });
 }
+    var storedData = JSON.parse(localStorage.getItem("userData"));
+        console.log("User's score", storedData)
+// below 8 lines not needed
+//     window.addEventListener("load", function(){
+//         var storedData = this.localStorage.getItem("storedData");
+//         if (storedData !== null){
+//             this.alert("You're the first to play!")
+//         }
+//     })
+
+// });
+// }
 
 
 function askQuestion(){
@@ -128,7 +128,7 @@ function handleUserAnswer(userChoice) {
 
 }
 
-timerElement.textContent = "Timer: " + timeRemaining + " sec.";
+// timerElement.textContent = "Timer: " + timeRemaining + " sec.";
 
 function startTimer() {
     timerInterval = setInterval(function () {
@@ -143,6 +143,7 @@ function startTimer() {
     }, 1000);
 }
 
+startButton.addEventListener("click", startButtonClick);
 function startButtonClick() {
     console.log("Started quiz")
     // once start button is clicked this hides the start screen
@@ -154,5 +155,5 @@ function startButtonClick() {
     
 };
 
-startButton.addEventListener("click", startButtonClick);
+// startButton.addEventListener("click", startButtonClick);
 
