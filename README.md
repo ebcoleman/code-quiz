@@ -16,7 +16,7 @@ Screenshots:
     
 Link:
 
-    https://ebcoleman.github.io/code-quiz/
+https://ebcoleman.github.io/code-quiz/
 
 
 ## Credits
