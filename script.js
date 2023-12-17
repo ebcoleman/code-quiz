@@ -61,11 +61,22 @@ function showDoneScreen () {
         timeRemaining: timeRemaining
     };
 
-
+// something has to be incorrect between this line and 69
     localStorage.setItem("userData", JSON.stringify(userData));
     console.log("User submitted: ", userData);
 
     window.location.href = "scoreboard.html";
+    
+    var storedData = JSON.parse(localStorage.getItem("userData"));
+        console.log("User's score", storedData)
+
+    window.addEventListener("load", function(){
+        var storedData = this.localStorage.getItem("storedData");
+        if (storedData !== null){
+            this.alert("You're the first to play!")
+        }
+    })
+
 });
 }
 
