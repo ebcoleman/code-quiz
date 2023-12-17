@@ -113,8 +113,6 @@ https://www.testgorilla.com/blog/basic-javascript-interview-questions/?utm_term=
 GIVEN I am taking a code quiz
 
 
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
 WHEN the game is over
 <!-- create localStorage -->
 THEN I can save my initials and my score

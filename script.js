@@ -51,7 +51,7 @@ function showDoneScreen () {
     finalTimeRemaining.textContent = "Time reamaining: " + timeRemaining + "sec.";
     doneScreen.appendChild(finalTimeRemaining);
 
-
+    
 
     submitButton.addEventListener("click", function() {
 
@@ -61,8 +61,11 @@ function showDoneScreen () {
         timeRemaining: timeRemaining
     };
 
+
     localStorage.setItem("userData", JSON.stringify(userData));
     console.log("User submitted: ", userData);
+
+    window.location.href = "scoreboard.html";
 });
 }
 
